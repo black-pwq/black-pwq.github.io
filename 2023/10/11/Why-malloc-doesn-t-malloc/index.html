@@ -27,7 +27,7 @@
 <meta property="og:description" content="从一个简单的C程序开始 这里有一个简单的程序将会调用malloc请求指定数目的Megabytes. 123456789101112131415161718192021#include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main(int argc, char *argv[]) &amp;#123;	if(ar">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-11T12:51:05.000Z">
-<meta property="article:modified_time" content="2023-10-11T13:56:51.862Z">
+<meta property="article:modified_time" content="2023-10-11T14:07:17.502Z">
 <meta property="article:author" content="Black Pan">
 <meta name="twitter:card" content="summary">
 
@@ -104,7 +104,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84c%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">从一个简单的C程序开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%9C%89%E5%8A%9B%E7%9A%84%E5%B7%A5%E5%85%B7-pmap"><span class="nav-number">1.1.</span> <span class="nav-text">更有力的工具: pmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%AE%A9os%E7%BB%99%E6%88%91%E5%BC%80%E8%BE%9F1g%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">一行代码让OS给我开辟1G空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">匿名文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#future-reading"><span class="nav-number">4.</span> <span class="nav-text">Future reading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#refs"><span class="nav-number">5.</span> <span class="nav-text">Refs</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84c%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">从一个简单的C程序开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%9C%89%E5%8A%9B%E7%9A%84%E5%B7%A5%E5%85%B7-pmap"><span class="nav-number">1.1.</span> <span class="nav-text">更有力的工具: pmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%AE%A9os%E7%BB%99%E6%88%91%E5%BC%80%E8%BE%9F1g%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">一行代码让OS给我开辟1G空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">匿名文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#further-reading"><span class="nav-number">4.</span> <span class="nav-text">Further reading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#refs"><span class="nav-number">5.</span> <span class="nav-text">Refs</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -183,7 +183,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-10-11 20:51:05 / 修改时间：21:56:51" itemprop="dateCreated datePublished" datetime="2023-10-11T20:51:05+08:00">2023-10-11</time>
+      <time title="创建时间：2023-10-11 20:51:05 / 修改时间：22:07:17" itemprop="dateCreated datePublished" datetime="2023-10-11T20:51:05+08:00">2023-10-11</time>
     </span>
 
   
@@ -214,7 +214,7 @@
 <li>我们一共申请了1GB的空间，但在堆中一共有(1GB+16B)的内存占用，剩余的16B是什么？</li>
 <li>匿名文件的管理应由操作系统完成，还是由<code>malloc</code>完成？</li>
 </ol>
-<h1 id="future-reading">Future reading</h1>
+<h1 id="further-reading">Further reading</h1>
 <p>https://stackoverflow.com/questions/63211326/why-malloc-doesnt-allocate-memory-until-i-hit-a-certain-threshold</p>
 <h1 id="refs">Refs</h1>
 <ul>
