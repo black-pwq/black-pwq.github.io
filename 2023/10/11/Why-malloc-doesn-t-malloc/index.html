@@ -19,25 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"black-pwq.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这是哪？The black(&#39;s) world!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="布莱克的博客">
-<meta property="og:url" content="https://black-pwq.github.io/index.html">
+    <meta name="description" content="从一个简单的C程序开始 这里有一个简单的程序将会调用malloc请求指定数目的Megabytes. 123456789101112131415161718192021#include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main(int argc, char *argv[]) &amp;#123;	if(ar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why malloc doesn&#39;t malloc">
+<meta property="og:url" content="https://black-pwq.github.io/2023/10/11/Why-malloc-doesn-t-malloc/index.html">
 <meta property="og:site_name" content="布莱克的博客">
-<meta property="og:description" content="这是哪？The black(&#39;s) world!">
+<meta property="og:description" content="从一个简单的C程序开始 这里有一个简单的程序将会调用malloc请求指定数目的Megabytes. 123456789101112131415161718192021#include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main(int argc, char *argv[]) &amp;#123;	if(ar">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-11T12:51:05.000Z">
+<meta property="article:modified_time" content="2023-10-11T13:56:51.862Z">
 <meta property="article:author" content="Black Pan">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://black-pwq.github.io/">
+<link rel="canonical" href="https://black-pwq.github.io/2023/10/11/Why-malloc-doesn-t-malloc/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://black-pwq.github.io/2023/10/11/Why-malloc-doesn-t-malloc/","path":"2023/10/11/Why-malloc-doesn-t-malloc/","title":"Why malloc doesn't malloc"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>布莱克的博客</title>
+<title>Why malloc doesn't malloc | 布莱克的博客</title>
   
 
 
@@ -67,7 +69,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">布莱克的博客</h1>
+      <p class="site-title">布莱克的博客</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -89,7 +91,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -102,6 +104,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84c%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">从一个简单的C程序开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%9C%89%E5%8A%9B%E7%9A%84%E5%B7%A5%E5%85%B7-pmap"><span class="nav-number">1.1.</span> <span class="nav-text">更有力的工具: pmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%AE%A9os%E7%BB%99%E6%88%91%E5%BC%80%E8%BE%9F1g%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">一行代码让OS给我开辟1G空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">匿名文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#future-reading"><span class="nav-number">4.</span> <span class="nav-text">Future reading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#refs"><span class="nav-number">5.</span> <span class="nav-text">Refs</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -139,16 +142,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://black-pwq.github.io/2023/10/11/Why-malloc-doesn-t-malloc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -162,13 +166,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 布莱克的博客">
+      <meta itemprop="name" content="Why malloc doesn't malloc | 布莱克的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/11/Why-malloc-doesn-t-malloc/" class="post-title-link" itemprop="url">Why malloc doesn't malloc</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Why malloc doesn't malloc
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -191,8 +195,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="从一个简单的c程序开始">从一个简单的C程序开始</h1>
+    <div class="post-body" itemprop="articleBody"><h1 id="从一个简单的c程序开始">从一个简单的C程序开始</h1>
 <p>这里有一个简单的程序将会调用<code>malloc</code>请求指定数目的Megabytes. <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(argc != <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Provide a number to indicate the number of bytes (in Mega)\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">8</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> num = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">	<span class="type">size_t</span> max = num * <span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">18</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;declared %ld ints\n&quot;</span>, max);</span><br><span class="line">	<span class="type">int</span> *a = <span class="built_in">malloc</span>(max * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">			a[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 但当你运行程序 (例如，<code>./a.out 1000</code>) 后有意思的事情就发生了</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">free -h</span></span><br><span class="line">               total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:            12Gi       649Mi        11Gi       0.0Ki       320Mi        11Gi</span><br><span class="line">Swap:          4.0Gi          0B       4.0Gi</span><br></pre></td></tr></table></figure>
 <p>我们可以看到，内存仅使用了<code>649MB</code>?! 仅这个程序而言，我们就申请了<code>1GB</code>的内存，但整个系统仅使用了近<code>600MB</code>?</p>
@@ -219,7 +222,6 @@
 <li>CSAPP, Memory Mapping, sec. 9.8, p. 870; Dynamic Memory Allocation, sec. 9.9, p. 876.</li>
 </ul>
 
-      
     </div>
 
     
@@ -227,117 +229,18 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
+        
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://black-pwq.github.io/2023/10/10/suggestion/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Black Pan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="布莱克的博客">
-      <meta itemprop="description" content="这是哪？The black('s) world!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 布莱克的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/10/suggestion/" class="post-title-link" itemprop="url">Independence and Suggestion</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-10 16:13:16 / 修改时间：17:09:35" itemprop="dateCreated datePublished" datetime="2023-10-10T16:13:16+08:00">2023-10-10</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="independence">Independence</h1>
-<p>Page 73, Problem 1.43.</p>
-<p>The events <span class="math inline">\(A\)</span> and <span class="math inline">\(B^c\)</span> are independent if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent. <span class="math display">\[\begin{aligned}
-        P(B)P(A) + P(A\cap B^c) = P(A) = P(B)P(A) + P(B^c)P(A)
-    \end{aligned} \]</span> The first equality holds because <span class="math display">\[\begin{aligned} P(A\cap B) + P(A\cap B^c) = P(A) = P(B)P(A) + P(A\cap B^c) \end{aligned}\]</span></p>
-<h2 id="transitibity-of-independence-on-sets-complement">Transitibity of Independence on set's complement</h2>
-<p>The events <span class="math inline">\(A^c\)</span> and <span class="math inline">\(B^c\)</span> are independent if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent. Apply the previous result on <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, then on <span class="math inline">\(B^c\)</span> and <span class="math inline">\(A\)</span>.</p>
-<h1 id="suggestion">Suggestion</h1>
-<p>Page 69, Problem 1.29.</p>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events with <span class="math inline">\(P(A) &gt; 0\)</span> and <span class="math inline">\(P(B) &gt; 0\)</span>. We say that an event <span class="math inline">\(B\)</span> suggests an event <span class="math inline">\(A\)</span> if <span class="math inline">\(P(A|B) &gt; P(A)\)</span>, and does not suggest event <span class="math inline">\(A\)</span> if <span class="math inline">\(P(A|B) &lt; P(B)\)</span>.</p>
-<h2 id="suggestion-is-mutual">Suggestion is mutual</h2>
-<p><span class="math display">\[\begin{aligned}
-            P(A|B) &gt; P(A) \iff P(B|A)&gt; P(B)
-    \end{aligned} \]</span></p>
-<p><span class="math display">\[\begin{aligned}
-                P(A|B) &amp;&gt; P(A)\\
-                P(A\cap B)&amp;&gt;P(A)P(B)
-    \end{aligned}\]</span> Notice the symmetry in the above equivalent formula.</p>
-<h2 id="suggestion-is-complement">Suggestion is complement</h2>
-<p><span class="math display">\[\begin{aligned}
-            P(A|B) &gt; P(A) \iff P(A|B^c) &lt; P(A)
-            \label{eq:complement}
-        \end{aligned}\]</span></p>
-<p><span class="math display">\[\begin{aligned}
-                P(B)P(A) + P(B^c)P(A) = P(A)= P(B)P(A | B) + P(B^c)P(A | B^c)
-            \end{aligned}\]</span> If <span class="math inline">\(P(A|B) &gt; P(A)\)</span>, to make the above equality holds, <span class="math inline">\(P(A)\)</span> must be less than <span class="math inline">\(P(A|B^c)\)</span>.</p>
-<p>Notice <a href="#eq:complement" data-reference-type="ref" data-reference="eq:complement">[eq:complement]</a> could be rewritten as <span class="math display">\[\begin{aligned}
-            P(A|B) &gt; P(A) &gt; P(A|B^c),
-        \end{aligned}\]</span> if <span class="math inline">\(A,B\)</span> suggest each other. Thus, the following argument is always true <span class="math display">\[\begin{aligned}
-            P(A|B) &gt; P(A|B^c) \iff P(A|B) &gt; P(A)
-        \end{aligned}\]</span></p>
-<p>Suggestion is not only complement on the condition, but also on the conditional event, i.e., <span class="math display">\[\begin{aligned}
-            P(A|B) &gt; P(A) \iff P(A^c|B) &lt; P(A^c)
-        \end{aligned}\]</span></p>
-<p><span class="math display">\[\begin{aligned}
-                P(A|B) + P(A^c|B) = 1= P(A) + P(A^c)
-            \end{aligned}\]</span></p>
-<p>Double complement suggestion have the same result as the original. In other words, <span class="math display">\[\begin{aligned}
-            P(A|B) &gt; P(A) \iff P(A^c|B^c) &gt; P(A^c)
-        \end{aligned}\]</span> This equivalence is trivial by the above arguments.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/10/suggestion/" rel="prev" title="Independence and Suggestion">
+                  <i class="fa fa-angle-left"></i> Independence and Suggestion
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -346,6 +249,13 @@
 
 
 
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
 </div>
   </main>
 
@@ -399,7 +309,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
