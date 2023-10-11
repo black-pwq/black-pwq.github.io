@@ -114,7 +114,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -140,101 +140,6 @@
     </div>
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://black-pwq.github.io/2023/10/11/Why-malloc-doesn-t-malloc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Black Pan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="布莱克的博客">
-      <meta itemprop="description" content="这是哪？The black('s) world!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 布莱克的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/10/11/Why-malloc-doesn-t-malloc/" class="post-title-link" itemprop="url">Why malloc doesn't malloc</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-11 20:51:05 / 修改时间：22:21:37" itemprop="dateCreated datePublished" datetime="2023-10-11T20:51:05+08:00">2023-10-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="从一个简单的c程序开始">从一个简单的C程序开始</h1>
-<p>这里有一个简单的程序将会调用<code>malloc</code>请求指定数目的Megabytes. <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(argc != <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Provide a number to indicate the number of bytes (in Mega)\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">8</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> num = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">	<span class="type">size_t</span> max = num * <span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">18</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;declared %ld ints\n&quot;</span>, max);</span><br><span class="line">	<span class="type">int</span> *a = <span class="built_in">malloc</span>(max * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">			a[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 但当你运行程序 (例如，<code>./a.out 1000</code>) 后有意思的事情就发生了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">free -h</span></span><br><span class="line">               total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:            12Gi       649Mi        11Gi       0.0Ki       320Mi        11Gi</span><br><span class="line">Swap:          4.0Gi          0B       4.0Gi</span><br></pre></td></tr></table></figure>
-<p>我们可以看到，内存仅使用了<code>649MB</code>?! 仅这个程序而言，我们就申请了<code>1GB</code>的内存，但整个系统仅使用了近<code>600MB</code>?</p>
-<p>Here's the man page of <a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/free.1.html"><code>free</code></a> for ref.</p>
-<h2 id="更有力的工具-pmap">更有力的工具: <a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/pmap.1.html">pmap</a></h2>
-<p><code>free</code> 提供的信息少的可怜，我们来看看<code>pmap</code>能揭示的信息有哪些</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ pmap 18414 -x</span><br><span class="line">18414:   ./a.out 1000</span><br><span class="line">Address           Kbytes     RSS   Dirty Mode  Mapping</span><br><span class="line">00005642164b8000       4       4       0 r---- a.out</span><br><span class="line">00005642164b9000       4       4       0 r-x-- a.out</span><br><span class="line">00005642164ba000       4       4       0 r---- a.out</span><br><span class="line">00005642164bb000       4       4       4 r---- a.out</span><br><span class="line">00005642164bc000       4       4       4 rw--- a.out</span><br><span class="line">0000564218248000     132       4       4 rw---   [ anon ]</span><br><span class="line">00007fa6d1b9a000 1024016      12      12 rw---   [ anon ]</span><br><span class="line">00007fa71039e000     160     160       0 r---- libc.so.6</span><br><span class="line">00007fa7103c6000    1620     852       0 r-x-- libc.so.6</span><br><span class="line">00007fa71055b000     352     148       0 r---- libc.so.6</span><br><span class="line">00007fa7105b3000      16      16      16 r---- libc.so.6</span><br><span class="line">00007fa7105b7000       8       8       8 rw--- libc.so.6</span><br><span class="line">00007fa7105b9000      52      20      20 rw---   [ anon ]</span><br><span class="line">00007fa7105d0000       8       4       4 rw---   [ anon ]</span><br><span class="line">00007fa7105d2000       8       8       0 r---- ld-linux-x86-64.so.2</span><br><span class="line">00007fa7105d4000     168     168       0 r-x-- ld-linux-x86-64.so.2</span><br><span class="line">00007fa7105fe000      44      44       0 r---- ld-linux-x86-64.so.2</span><br><span class="line">00007fa71060a000       8       8       8 r---- ld-linux-x86-64.so.2</span><br><span class="line">00007fa71060c000       8       8       8 rw--- ld-linux-x86-64.so.2</span><br><span class="line">00007ffdc8b06000     136      12      12 rw---   [ stack ]</span><br><span class="line">00007ffdc8b9b000      16       0       0 r----   [ anon ]</span><br><span class="line">00007ffdc8b9f000       4       4       0 r-x--   [ anon ]</span><br><span class="line">---------------- ------- ------- ------- </span><br><span class="line">total kB         1026776    1496     100</span><br></pre></td></tr></table></figure>
-<p>可以看到 <code>0000564218248000H</code> 处有近1GB的虚拟地址空间。但往右处一瞥，我们发现实际的内存只占了12KB!</p>
-<h1 id="一行代码让os给我开辟1g空间">一行代码让OS给我开辟1G空间</h1>
-<p>在我们尝试理解这其中的奥秘前，先来看看一个稍微改动的之前的小C程序 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">	<span class="keyword">if</span>(argc != <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Provide a number to indicate the number of bytes (in Mega)\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">8</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> num = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">	<span class="type">size_t</span> max = num * <span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">18</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;declared %ld ints\n&quot;</span>, max);</span><br><span class="line">	<span class="type">int</span> *a = <span class="built_in">malloc</span>(max * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">			a[i] = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 与之前不同的是，我们将<code>for</code>循环里的语句换成了赋值语句。再来看看<code>free</code>提供的信息。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ free -h</span><br><span class="line">               total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:            12Gi       1.7Gi        10Gi       0.0Ki       384Mi        10Gi</span><br><span class="line">Swap:          4.0Gi          0B       4.0Gi</span><br></pre></td></tr></table></figure> 以及<code>pmap</code>提供的更全面的信息 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ pmap 26259 -x</span><br><span class="line">26259:   ./a.out 1000</span><br><span class="line">Address           Kbytes     RSS   Dirty Mode  Mapping</span><br><span class="line">000055dbbfab8000       4       4       0 r---- a.out</span><br><span class="line">000055dbbfab9000       4       4       0 r-x-- a.out</span><br><span class="line">000055dbbfaba000       4       4       0 r---- a.out</span><br><span class="line">000055dbbfabb000       4       4       4 r---- a.out</span><br><span class="line">000055dbbfabc000       4       4       4 rw--- a.out</span><br><span class="line">000055dbc0bc8000     132       4       4 rw---   [ anon ]</span><br><span class="line">00007f1824701000 1024016 1024012 1024012 rw---   [ anon ]</span><br><span class="line">00007f1862f05000     160     160       0 r---- libc.so.6</span><br><span class="line">00007f1862f2d000    1620     908       0 r-x-- libc.so.6</span><br><span class="line">00007f18630c2000     352     184       0 r---- libc.so.6</span><br><span class="line">00007f186311a000      16      16      16 r---- libc.so.6</span><br><span class="line">00007f186311e000       8       8       8 rw--- libc.so.6</span><br><span class="line">00007f1863120000      52      20      20 rw---   [ anon ]</span><br><span class="line">00007f1863137000       8       4       4 rw---   [ anon ]</span><br><span class="line">00007f1863139000       8       8       0 r---- ld-linux-x86-64.so.2</span><br><span class="line">00007f186313b000     168     168       0 r-x-- ld-linux-x86-64.so.2</span><br><span class="line">00007f1863165000      44      44       0 r---- ld-linux-x86-64.so.2</span><br><span class="line">00007f1863171000       8       8       8 r---- ld-linux-x86-64.so.2</span><br><span class="line">00007f1863173000       8       8       8 rw--- ld-linux-x86-64.so.2</span><br><span class="line">00007fffbefbc000     136      16      16 rw---   [ stack ]</span><br><span class="line">00007fffbefea000      16       0       0 r----   [ anon ]</span><br><span class="line">00007fffbefee000       4       4       0 r-x--   [ anon ]</span><br><span class="line">---------------- ------- ------- ------- </span><br><span class="line">total kB         1026776 1025592 1024104</span><br></pre></td></tr></table></figure></p>
-<p>我们可以看到，两者都输出了近1GB的内存使用空间。</p>
-<h2 id="匿名文件">匿名文件</h2>
-<p>一个值得注意的点是，<code>pmap</code>标注了我们申请的区域为<code>[anon]</code>，这意味着我们申请的内存对应着的是匿名文件。一个相似的比喻是<code>ELF</code>格式中的<code>.bss</code>区域。这意味着该文件为假想的页，实际上并不占用存储空间，当我们访问到其中的区域时，我们所得到的值必然为0。当我们写时，导致匿名文件的值不再为0，因此需要占用内存资源存放信息。这也就是为什么仅仅读写之分便可消耗大量的内存空间。</p>
-<h1 id="questions">Questions</h1>
-<ol type="1">
-<li>我们一共申请了1000MB的空间，但在堆中一共有(1000MB+16KB)的内存占用，剩余的16KB是什么？</li>
-<li>匿名文件的管理应由操作系统完成，还是由<code>malloc</code>完成？</li>
-</ol>
-<h1 id="further-reading">Further reading</h1>
-<p>https://stackoverflow.com/questions/63211326/why-malloc-doesnt-allocate-memory-until-i-hit-a-certain-threshold</p>
-<h1 id="refs">Refs</h1>
-<ul>
-<li>OSTEP, The Abstraction: Address Spaces, p.175.</li>
-<li>CSAPP, Memory Mapping, sec. 9.8, p. 870; Dynamic Memory Allocation, sec. 9.9, p. 876.</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
