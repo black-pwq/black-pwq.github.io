@@ -185,7 +185,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-02-09 02:22:08" itemprop="dateModified" datetime="2024-02-09T02:22:08+08:00">2024-02-09</time>
+      <time title="修改时间：2024-02-09 02:28:17" itemprop="dateModified" datetime="2024-02-09T02:28:17+08:00">2024-02-09</time>
     </span>
 
   
@@ -209,7 +209,7 @@
 <p><code>%LocalAppData%\Programs</code>是用来存放单用户安装程序的目录。<code>%LocalAppData%\Programs</code>与<code>%LocalAppData%\ProgramData</code>两者不会出现在<code>%AppData%</code>中。</p>
 <p>例如vs code的安装路径就在<code>%LocalAppData%\Programs</code>。Vs code官网对单用户安装与系统级别的安装进行了<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/setup/windows">说明</a>：</p>
 <blockquote>
-<p>By default, VS Code is installed under C:\{Username}VS Code.</p>
+<p>By default, VS Code is installed under <code>C:\Users\&#123;Username&#125;\AppData\Local\Programs\Microsoft VS Code</code>.</p>
 </blockquote>
 <p>事实上，许多软件会滥用<code>%AppData%</code>目录。例如百度云安装的目录就在<code>%AppData%</code>中，但一般而言，该目录应当存放软件使用过程中产生的数据，而不是软件本身。</p>
 <p>目前，Windows 10下软件安装的位置仍然很多样，但比较常见的安装位置通常分布在<code>%ProgramFile%</code>, <code>%ProgramFiles%\WindowsApps</code>以及<code>%LocalAppData%\Programs</code>下。安装在前两者的应用通常是系统层级的，而后者多为用户独有应用，其中<code>WindowsApps</code>通常为微软商店下载的应用位置，<a target="_blank" rel="noopener" href="https://blog.csdn.net/WPwalter/article/details/79394709?spm=1001.2014.3001.5506">即便具备管理员权限也通常不能访问</a>。</p>
@@ -220,9 +220,10 @@
 <ul>
 <li><code>.m2</code>用于存放Maven仓库</li>
 <li><code>.p2</code>存放Eclipse插件(Bundle)</li>
-<li><code>.ssh</code>存放<code>ssh</code>配置文件相关 <!-- - `.vscode`
-- `.android`
-- ... --></li>
+<li><code>.ssh</code>存放<code>ssh</code>配置文件相关</li>
+<li><code>.vscode</code></li>
+<li><code>.android</code></li>
+<li>...</li>
 </ul>
 
       
