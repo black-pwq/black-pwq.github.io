@@ -185,7 +185,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-02-21 23:14:47" itemprop="dateModified" datetime="2024-02-21T23:14:47+08:00">2024-02-21</time>
+      <time title="修改时间：2024-02-21 23:16:35" itemprop="dateModified" datetime="2024-02-21T23:16:35+08:00">2024-02-21</time>
     </span>
 
   
@@ -234,7 +234,15 @@
 <h2 id="activate-a-conda-env-in-systemd-service">Activate a conda env in systemd service</h2>
 <p>https://github.com/mmaz/systemd-conda</p>
 <h1 id="shell-script">Shell script</h1>
-<p>Accessing Individual Arguments: To access specific arguments, use the following variables: - <code>$0</code>: The script name itself. - <code>$1</code>, <code>$2</code>, <code>$3</code>, …: The first, second, third, and subsequent arguments. - <code>$#</code>: The total number of arguments. - <code>$@</code>: All arguments as a list. - <code>$$</code>: The process ID of the script. - <code>$?</code>: The exit code of the last executed command.</p>
+<p>Accessing Individual Arguments: To access specific arguments, use the following variables:</p>
+<ul>
+<li><code>$0</code>: The script name itself.</li>
+<li><code>$1</code>, <code>$2</code>, <code>$3</code>, …: The first, second, third, and subsequent arguments.</li>
+<li><code>$#</code>: The total number of arguments.</li>
+<li><code>$@</code>: All arguments as a list.</li>
+<li><code>$$</code>: The process ID of the script.</li>
+<li><code>$?</code>: The exit code of the last executed command.</li>
+</ul>
 <p>Example Script: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Script Name: <span class="variable">$0</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Parameter: <span class="variable">$1</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Second Parameter: <span class="variable">$2</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;All Arguments: <span class="variable">$@</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Total Number of Parameters: <span class="variable">$#</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Process ID: $$&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Exit Code: $?&quot;</span></span><br></pre></td></tr></table></figure></p>
 
       
