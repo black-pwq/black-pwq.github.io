@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"black-pwq.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Linux common commands See the log from systemd service: journalctl Common usage journalctl -u UnitName --since today Use right arrow key to scroll right. Or press -S and Enter in less to toggle word w">
+    <meta name="description" content="See the log from systemd service: journalctl Common usage journalctl -u UnitName --since today Use right arrow key to scroll right. Or press -S and Enter in less to toggle word wrap. Also see DigitalO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux-common-command">
+<meta property="og:title" content="Linux Common Commands">
 <meta property="og:url" content="https://black-pwq.github.io/2024/02/20/linux-common-command/index.html">
 <meta property="og:site_name" content="Black的博客">
-<meta property="og:description" content="Linux common commands See the log from systemd service: journalctl Common usage journalctl -u UnitName --since today Use right arrow key to scroll right. Or press -S and Enter in less to toggle word w">
+<meta property="og:description" content="See the log from systemd service: journalctl Common usage journalctl -u UnitName --since today Use right arrow key to scroll right. Or press -S and Enter in less to toggle word wrap. Also see DigitalO">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-20T08:53:21.000Z">
-<meta property="article:modified_time" content="2024-02-21T14:57:13.615Z">
+<meta property="article:modified_time" content="2024-02-21T15:00:35.575Z">
 <meta property="article:author" content="Black Pan">
 <meta name="twitter:card" content="summary">
 
@@ -36,10 +36,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://black-pwq.github.io/2024/02/20/linux-common-command/","path":"2024/02/20/linux-common-command/","title":"linux-common-command"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://black-pwq.github.io/2024/02/20/linux-common-command/","path":"2024/02/20/linux-common-command/","title":"Linux Common Commands"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>linux-common-command | Black的博客</title>
+<title>Linux Common Commands | Black的博客</title>
   
 
 
@@ -104,7 +104,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-common-commands"><span class="nav-number">1.</span> <span class="nav-text">Linux common commands</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#see-the-log-from-systemd-service-journalctl"><span class="nav-number">1.1.</span> <span class="nav-text">See the log from systemd service: journalctl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#common-usage"><span class="nav-number">1.1.1.</span> <span class="nav-text">Common usage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#show-colorful-output"><span class="nav-number">1.1.2.</span> <span class="nav-text">Show colorful output:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continuously-print-new-logs"><span class="nav-number">1.1.3.</span> <span class="nav-text">Continuously print new logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#restrict-the-output-to-latest-run"><span class="nav-number">1.1.4.</span> <span class="nav-text">Restrict the output to latest run:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pythonconda-in-systemd-service"><span class="nav-number">1.2.</span> <span class="nav-text">Python(conda) in systemd service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-script"><span class="nav-number">1.3.</span> <span class="nav-text">Shell script</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#see-the-log-from-systemd-service-journalctl"><span class="nav-number">1.</span> <span class="nav-text">See the log from systemd service: journalctl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#common-usage"><span class="nav-number">1.1.</span> <span class="nav-text">Common usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-colorful-output"><span class="nav-number">1.2.</span> <span class="nav-text">Show colorful output:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continuously-print-new-logs"><span class="nav-number">1.3.</span> <span class="nav-text">Continuously print new logs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#restrict-the-output-to-latest-run"><span class="nav-number">1.4.</span> <span class="nav-text">Restrict the output to latest run:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pythonconda-in-systemd-service"><span class="nav-number">2.</span> <span class="nav-text">Python(conda) in systemd service</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell-script"><span class="nav-number">3.</span> <span class="nav-text">Shell script</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,12 +166,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="linux-common-command | Black的博客">
+      <meta itemprop="name" content="Linux Common Commands | Black的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          linux-common-command
+          Linux Common Commands
         </h1>
 
         <div class="post-meta-container">
@@ -189,7 +189,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-02-21 22:57:13" itemprop="dateModified" datetime="2024-02-21T22:57:13+08:00">2024-02-21</time>
+      <time title="修改时间：2024-02-21 23:00:35" itemprop="dateModified" datetime="2024-02-21T23:00:35+08:00">2024-02-21</time>
     </span>
 
   
@@ -201,22 +201,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="linux-common-commands">Linux common commands</h1>
-<h2 id="see-the-log-from-systemd-service-journalctl">See the log from systemd service: <code>journalctl</code></h2>
-<h3 id="common-usage">Common usage</h3>
+    <div class="post-body" itemprop="articleBody"><h1 id="see-the-log-from-systemd-service-journalctl">See the log from systemd service: <code>journalctl</code></h1>
+<h2 id="common-usage">Common usage</h2>
 <p><code>journalctl -u UnitName --since today</code></p>
 <p>Use right arrow key to scroll right. Or press <code>-S</code> and Enter in <code>less</code> to toggle word wrap.</p>
 <p>Also see <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs">DigitalOcean's website</a> for more usages.</p>
-<h3 id="show-colorful-output">Show colorful output:</h3>
+<h2 id="show-colorful-output">Show colorful output:</h2>
 <p>If the original daemon output is already colorized, but the colors are being lost when using journalctl, the <code>--output cat</code> option will restore them. See the manual for more details. &gt;-o, --output= &gt; Controls the formatting of the journal entries that are shown. Takes one of the following &gt; options:</p>
 <blockquote>
 <p>cat generates a very terse output, only showing the actual message of each journal entry with no metadata, not even a timestamp.</p>
 </blockquote>
-<h3 id="continuously-print-new-logs">Continuously print new logs</h3>
+<h2 id="continuously-print-new-logs">Continuously print new logs</h2>
 <p><code>journalctl --follow --no-tail</code> is used when you want all previous lines (better than -n 100000 or arbitrary big line count)</p>
-<h3 id="restrict-the-output-to-latest-run">Restrict the output to latest run:</h3>
+<h2 id="restrict-the-output-to-latest-run">Restrict the output to latest run:</h2>
 <p><a target="_blank" rel="noopener" href="https://serverfault.com/questions/768901/is-there-a-way-to-make-journalctl-show-logs-from-the-last-time-foo-service-ran">TLDR</a>; Use the one liner: - System level: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">journalctl _SYSTEMD_INVOCATION_ID=`systemctl show -p InvocationID --value service_name.service`</span><br></pre></td></tr></table></figure> - User level: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">journalctl _SYSTEMD_INVOCATION_ID=`systemctl show -p InvocationID --value service_name.service --user`</span><br></pre></td></tr></table></figure></p>
-<h2 id="pythonconda-in-systemd-service">Python(conda) in systemd service</h2>
+<h1 id="pythonconda-in-systemd-service">Python(conda) in systemd service</h1>
 <p>Create a systemd Service File: Create a .service file (e.g., my_server.service) in a location of your choice (usually <code>/etc/systemd/system/</code> for system-level services or <code>~/.config/systemd/user/</code> for user-level services). Open the file for editing.</p>
 <p>Define the Service:</p>
 <ol type="1">
@@ -226,9 +225,9 @@
 </ol>
 <ul>
 <li><p>If you’re running this as a user-level service, use: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl --user <span class="built_in">enable</span> my_server.service</span><br><span class="line">systemctl --user start my_server.service</span><br></pre></td></tr></table></figure></p></li>
-<li><p>For system-level services, use: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> my_server.service</span><br><span class="line">sudo systemctl start my_server.service</span><br></pre></td></tr></table></figure> ### Activate a conda env in systemd service https://github.com/mmaz/systemd-conda</p></li>
+<li><p>For system-level services, use: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> my_server.service</span><br><span class="line">sudo systemctl start my_server.service</span><br></pre></td></tr></table></figure> ## Activate a conda env in systemd service https://github.com/mmaz/systemd-conda</p></li>
 </ul>
-<h2 id="shell-script">Shell script</h2>
+<h1 id="shell-script">Shell script</h1>
 <p>Accessing Individual Arguments: To access specific arguments, use the following variables: - $0: The script name itself. - $1, $2, $3, …: The first, second, third, and subsequent arguments. - $#: The total number of arguments. - <span class="math inline">\(@: All arguments as a list. - \$\)</span>: The process ID of the script. - $?: The exit code of the last executed command.</p>
 <p>Example Script: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Script Name: <span class="variable">$0</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Parameter: <span class="variable">$1</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Second Parameter: <span class="variable">$2</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;All Arguments: <span class="variable">$@</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Total Number of Parameters: <span class="variable">$#</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Process ID: $$&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Exit Code: $?&quot;</span></span><br></pre></td></tr></table></figure></p>
 
