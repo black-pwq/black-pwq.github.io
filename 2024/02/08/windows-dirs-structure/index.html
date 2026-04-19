@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -117,9 +117,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -212,7 +216,7 @@
 <p><code>%LocalAppData%\Programs</code>是用来存放单用户安装程序的目录。<code>%LocalAppData%\Programs</code>与<code>%LocalAppData%\ProgramData</code>两者不会出现在<code>%AppData%</code>中。</p>
 <p>例如vs code的安装路径就在<code>%LocalAppData%\Programs</code>。Vs code官网对单用户安装与系统级别的安装也进行了<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/setup/windows">说明</a>。</p>
 <blockquote>
-<p>By default, VS Code is installed under <br> <code>C:\Users\&#123;Username&#125;\AppData\Local\Programs\Microsoft VS Code</code>.</p>
+<p>By default, VS Code is installed under <br> <code>C:\Users\{Username}\AppData\Local\Programs\Microsoft VS Code</code>.</p>
 </blockquote>
 <p>事实上，许多软件会滥用<code>%AppData%</code>目录。例如百度云安装的目录就在<code>%AppData%</code>中，但一般而言，该目录应当存放软件使用过程中产生的数据，而不是软件本身。</p>
 <p>目前，Windows 10下软件安装的位置仍然很多样，但比较常见的安装位置通常分布在<code>%ProgramFile%</code>, <code>%ProgramFiles%\WindowsApps</code>以及<code>%LocalAppData%\Programs</code>下。安装在前两者的应用通常是系统层级的，而后者多为用户独有应用，其中<code>WindowsApps</code>通常为微软商店下载的应用位置，<a target="_blank" rel="noopener" href="https://blog.csdn.net/WPwalter/article/details/79394709?spm=1001.2014.3001.5506">即便具备管理员权限也通常不能访问</a>。</p>
@@ -260,12 +264,6 @@
 
 
 
-    
-  
-  <div class="comments giscus-container">
-  </div>
-  
-  
 </div>
   </main>
 
@@ -274,7 +272,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa-regular fa-heart"></i>
     </span>
@@ -323,33 +321,6 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"black-pwq/black-pwq.github.io","repo_id":"R_kgDOKZDrYA","category":"Announcements","category_id":"DIC_kwDOKZDrYM4CaAWS","mapping":"pathname","reactions_enabled":1,"emit_metadata":0,"theme":"preferred_color_scheme","lang":"zh-CN","crossorigin":"anonymous","input_position":"bottom","loading":"lazy"}</script>
-
-<script>
-document.addEventListener('page:loaded', () => {
-  if (!CONFIG.page.comments) return;
-
-  NexT.utils.loadComments('.giscus-container')
-    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
-      attributes: {
-        async                   : true,
-        crossOrigin             : 'anonymous',
-        'data-repo'             : CONFIG.giscus.repo,
-        'data-repo-id'          : CONFIG.giscus.repo_id,
-        'data-category'         : CONFIG.giscus.category,
-        'data-category-id'      : CONFIG.giscus.category_id,
-        'data-mapping'          : CONFIG.giscus.mapping,
-        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
-        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
-        'data-theme'            : CONFIG.giscus.theme,
-        'data-lang'             : CONFIG.giscus.lang,
-        'data-input-position'   : CONFIG.giscus.input_position,
-        'data-loading'          : CONFIG.giscus.loading
-      },
-      parentNode: document.querySelector('.giscus-container')
-    }));
-});
-</script>
 
 </body>
 </html>
